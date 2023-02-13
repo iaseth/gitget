@@ -5,7 +5,7 @@ export default function Header ({tabIndex, setTabIndex, TABS}) {
 	const tabItems = TABS.map((tab, k) => {
 		const current = tabIndex === k;
 		let className = "px-4 py-4 rounded-t basis-0 grow";
-		className += current ? " bg-slate-100 text-blue-500" : " cursor-pointer";
+		className += current ? " bg-slate-100 text-blue-800" : " cursor-pointer";
 
 		return (
 			<div key={k} className={className} onClick={() => current ? null : setTabIndex(k)}>

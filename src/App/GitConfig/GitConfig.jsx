@@ -7,8 +7,10 @@ import {sections} from './sections.json';
 
 // add computed properties
 sections.forEach(s => {
+	s.title = s.title || s.name;
 	s.props.forEach(p => {
 		p.section = s.name;
+		p.title = p.title || p.name;
 		p.fullname = `${p.section}.${p.name}`;
 		p.defaultValue = p.values[0] || "";
 	});
