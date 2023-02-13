@@ -37,7 +37,7 @@ export default function GitConfig () {
 	console.table(props);
 
 	return (
-		<main  className="py-4 bg-slate-100 space-y-8">
+		<main  className="bg-slate-100 space-y-8">
 			<Input {...{props, setProp, sections}} />
 			<Output {...{props, sections}} />
 		</main>

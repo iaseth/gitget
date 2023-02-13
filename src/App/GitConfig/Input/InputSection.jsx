@@ -9,8 +9,8 @@ export default function InputSection ({props, setProp, section}) {
 	const toggle = () => setExpanded(x => !x);
 
 	return (
-		<section className="container px-4 py-3 border-l-4 border-blue-500">
-			<h4 className="px-2 py-4">
+		<section className="container px-4 py-3 bg-slate-50 border-l-4 border-blue-500 shadow rounded-r">
+			<h4 className="py-4 text-right">
 				<span className="bg-blue-500 text-white px-5 py-3 rounded select-none cursor-pointer" onClick={toggle}>{section.name}</span>
 			</h4>
 
