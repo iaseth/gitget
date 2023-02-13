@@ -3,48 +3,33 @@ import React from 'react';
 import './App.css';
 
 import Header from './Header/Header';
-import Input from './Input/Input';
-import Output from './Output/Output';
 import Footer from './Footer/Footer';
 
-import {sections} from './sections.json';
+import GitIgnore from './GitIgnore/GitIgnore';
+import GitConfig from './GitConfig/GitConfig';
 
-// add computed properties
-sections.forEach(s => {
-	s.props.forEach(p => {
-		p.section = s.name;
-		p.fullname = `${p.section}.${p.name}`;
-		p.defaultValue = p.values[0] || "";
-	});
-});
-
-// collects all props into a single array
-const PROPS_ARRAY = sections.flatMap(s => s.props);
-
-// collects all props into an object
-const PROPS_OBJECT = {};
-PROPS_ARRAY.forEach(p => PROPS_OBJECT[p.fullname] = p);
-
-// default value for props state
-const DEFAULT_PROPS_OBJECT = {};
-PROPS_ARRAY.forEach(p => DEFAULT_PROPS_OBJECT[p.fullname] = p.defaultValue);
-
+const TABS = ["GitConfig", "GitIgnore"];
 
 function App () {
-	const [props, setProps] = React.useState(DEFAULT_PROPS_OBJECT);
-	const setProp = (prop, val) => setProps({
-		...props,
-		[prop]: val
-	});
+	const [tabIndex, setTabIndex] = React.useState(0);
+	const tab = TABS[tabIndex];
 
-	console.table(props);
+	function getCurrentTab () {
+		switch (tab) {
+			case "GitConfig":
+				return <GitConfig />
+			case "GitIgnore":
+				return <GitIgnore />
+			default:
+				return null;
+		}
+	}
 
 	return (
 		<div className="bg-red-300">
-			<Header />
+			<Header {...{tabIndex, setTabIndex, TABS}} />
 
-			<Input {...{props, setProp, sections}} />
-			<Output {...{props, sections}} />
+			{getCurrentTab()}
 
 			<Footer />
 		</div>
