@@ -17,7 +17,7 @@ function App () {
 	console.table(props);
 
 	return (
-		<div className="">
+		<div className="bg-red-300">
 			<Header />
 
 			<Input {...{props, setProp}} />

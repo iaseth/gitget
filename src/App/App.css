@@ -12,8 +12,10 @@ ul > li {
 	@apply list-disc list-inside;
 }
 
-.container {}
+.container {
+	@apply block;
+}
 
-.container > * {
+.container > section {
 	@apply max-w-md mx-auto;
 }
