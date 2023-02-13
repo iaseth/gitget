@@ -1,0 +1,35 @@
+{
+	"sections": [
+		{
+			"name": "user",
+			"props": [
+				{
+					"name": "name",
+					"values": ["John Smith"]
+				},
+				{
+					"name": "email",
+					"values": ["johnsmith@example.com"]
+				}
+			]
+		},
+		{
+			"name": "color",
+			"props": [
+				{
+					"name": "ui",
+					"values": ["auto"]
+				}
+			]
+		},
+		{
+			"name": "init",
+			"props": [
+				{
+					"name": "defaultBranch",
+					"values": ["master", "main"]
+				}
+			]
+		}
+	]
+}
