@@ -5,7 +5,6 @@ import TextInput from './TextInput';
 
 
 export default function InputSection ({props, setProp, section}) {
-	console.log(section);
 	const [expanded, setExpanded] = React.useState(true);
 	const toggle = () => setExpanded(x => !x);
 

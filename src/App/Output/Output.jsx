@@ -2,10 +2,15 @@ import {Button} from '../Utils';
 
 
 
-export default function Output ({props}) {
+export default function Output ({props, sections}) {
 	let output = "";
-	output += "[user]\n";
-	output += `\tname = ${props.name}\n`;
+	sections.forEach(section => {
+		output += `\n[${section.name}]\n`;
+		section.props.forEach(prop => {
+			output += `\t${prop.name} = ${props[prop.fullname]}\n`;
+		});
+	});
+	output += "\n";
 
 	return (
 		<main className="bg-slate-100 px-4 py-12">
