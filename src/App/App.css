@@ -13,9 +13,5 @@ ul > li {
 }
 
 .container {
-	@apply block;
-}
-
-.container > section {
 	@apply max-w-md mx-auto;
 }
