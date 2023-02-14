@@ -14,10 +14,12 @@ export default function InputSection ({props, setProp, section}) {
 				<span className="bg-blue-500 text-white px-5 py-3 rounded select-none cursor-pointer" onClick={toggle}>{section.title}</span>
 			</h4>
 
-			{expanded && section.props.map(p => <TextInput key={p.fullname}
-				title={p.title}
-				x={props[p.fullname]}
-				setX={x => setProp(p.fullname, x)} />)}
+			<main className="grid lg:grid-cols-2 gap-x-4">
+				{expanded && section.props.map(p => <TextInput key={p.fullname}
+					title={p.title}
+					x={props[p.fullname]}
+					setX={x => setProp(p.fullname, x)} />)}
+			</main>
 		</section>
 	);
 }

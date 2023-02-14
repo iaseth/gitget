@@ -13,5 +13,5 @@ ul > li {
 }
 
 .container {
-	@apply max-w-md mx-auto;
+	@apply max-w-3xl mx-auto;
 }
